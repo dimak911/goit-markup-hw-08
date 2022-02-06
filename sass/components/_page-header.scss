@@ -5,16 +5,39 @@
 }
 
 .header__container {
-  display: flex;
-  align-items: center;
+  outline: 2px solid tomato;
 }
 
 .header-nav {
   display: flex;
+  min-height: 60px;
   align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+
+  outline: 2px solid green;
+}
+
+.burger-btn__icon {
+  display: block;
+}
+
+.burger-btn {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  &:hover .burger-btn__icon,
+  &:focus .burger-btn__icon {
+    fill: $accent-color;
+  }
 }
 
 // Главное меню
+.main-menu-box {
+  display: none;
+}
+
 .main-menu {
   display: flex;
 }

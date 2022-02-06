@@ -1,10 +1,20 @@
 // Сервисы
+.services__section {
+  display: none;
+
+  @media screen and (min-width: $desktop) {
+    display: block;
+  }
+}
+
 .section--no-padding-top {
   padding-top: 0;
 }
 
-.services {
-  display: flex;
+@media screen and (min-width: $desktop) {
+  .services {
+    display: flex;
+  }
 }
 
 .services__item:not(:last-child) {

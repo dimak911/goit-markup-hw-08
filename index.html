@@ -32,32 +32,44 @@
           <!-- Лого -->
           <a class="logo logo__header" href="./index.html">Web<span class="logo__dark">Studio</span></a>
           <!-- Главное меню -->
-          <ul class="main-menu">
-            <li class="main-menu__item">
-              <a class="main-menu__link main-menu__link--current" href="./index.html">Студия</a>
-            </li>
-            <li class="main-menu__item">
-              <a class="main-menu__link" href="./portfolio.html">Портфолио</a>
-            </li>
-            <li class="main-menu__item"><a class="main-menu__link" href="">Контакты</a></li>
-          </ul>
+          <button class="burger-btn" type="button">
+            <svg class="burger-btn__icon" width="40 " height="40">
+              <use href="./images/icons.svg#icon-burger"></use>
+            </svg>
+            <svg class="burger-btn__icon" width="40 " height="40">
+              <use href="./images/icons.svg#icon-burger-close"></use>
+            </svg>
+          </button>
+          <div class="main-menu-box">
+            <ul class="main-menu">
+              <li class="main-menu__item">
+                <a class="main-menu__link main-menu__link--current" href="./index.html">Студия</a>
+              </li>
+              <li class="main-menu__item">
+                <a class="main-menu__link" href="./portfolio.html">Портфолио</a>
+              </li>
+              <li class="main-menu__item"><a class="main-menu__link" href="#">Контакты</a></li>
+            </ul>
+          </div>
         </nav>
         <!-- Контакты в шапке -->
-        <ul class="contacts">
-          <li class="contacts__item">
-            <a class="contacts__link" href="mailto:info@devstudio.com">
-              <svg class="contacts__icon" width="16" height="12">
-                <use href="./images/icons.svg#icon-envelope">
-              </svg>info@devstudio.com</a>
-          </li>
-          <li class="contacts__item">
-            
-            <a class="contacts__link" href="tel:+380961111111">
-              <svg class="contacts__icon" width="10" height="16">
-                <use href="./images/icons.svg#icon-smartphone">
-              </svg>+38 096 111 11 11</a>
-          </li>
-        </ul>
+        <div class="main-menu-box">
+          <ul class="contacts">
+            <li class="contacts__item">
+              <a class="contacts__link" href="mailto:info@devstudio.com">
+                <svg class="contacts__icon" width="16" height="12">
+                  <use href="./images/icons.svg#icon-envelope">
+                </svg>info@devstudio.com</a>
+            </li>
+            <li class="contacts__item">
+              
+              <a class="contacts__link" href="tel:+380961111111">
+                <svg class="contacts__icon" width="10" height="16">
+                  <use href="./images/icons.svg#icon-smartphone">
+                </svg>+38 096 111 11 11</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
     <!-- основная информация -->
@@ -132,7 +144,7 @@
       </section>
 
       <!-- изображение услуг -->
-      <section class="section section--no-padding-top">
+      <section class="section section--no-padding-top services__section">
         <div class="container">
           <h2 class="section__title">Чем мы занимаемся</h2>
           <!-- список услуг -->
@@ -187,11 +199,11 @@
           <ul class="team">
             <!-- сотрудник 1 -->
             <li class="team__item">
-              <img
-                src="./images/employee-1.jpg"
+              <img class="team__img"
+                srcset="./images/employee-1-270w@1x.jpg 270w, ./images/employee-1-354w@1x.jpg 354w, ./images/employee-1-450w@1x.jpg 450w, ./images/employee-1-540w@2x.jpg 540w, ./images/employee-1-708w@2x.jpg 708w, ./images/employee-1-900w@2x.jpg 900w"
+                sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw"
+                src="./images/employee-1-270w@1x.jpg"
                 alt="сотрудник с должностью Product Designer"
-                width="270"
-                height="260"
               />
               <div class="team__content">
                 <h3 class="team__title">Игорь Демьяненко</h3>
@@ -237,11 +249,12 @@
 
             <!-- сотрудник 2 -->
             <li class="team__item">
-              <img
-                src="./images/employee-2.jpg"
+              <img class="team__img"
+                srcset="./images/employee-2-270w@1x.jpg 270w, ./images/employee-2-354w@1x.jpg 354w, ./images/employee-2-450w@1x.jpg 450w, ./images/employee-2-540w@2x.jpg 540w, ./images/employee-2-708w@2x.jpg 708w, ./images/employee-2-900w@2x.jpg 900w"
+                sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw"
+                src="./images/employee-2-270w@1x.jpg"
                 alt="сотрудник с должностью Frontend Developer"
-                width="270"
-                height="260"
+                
               />
               <div class="team__content">
                 <h3 class="team__title">Ольга Репина</h3>
@@ -287,11 +300,12 @@
 
             <!-- сотрудник 3 -->
             <li class="team__item">
-              <img
-                src="./images/employee-3.jpg"
+              <img class="team__img"
+                srcset="./images/employee-3-270w@1x.jpg 270w, ./images/employee-3-354w@1x.jpg 354w, ./images/employee-3-450w@1x.jpg 450w, ./images/employee-3-540w@2x.jpg 540w, ./images/employee-3-708w@2x.jpg 708w, ./images/employee-3-900w@2x.jpg 900w"
+                sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw"
+                src="./images/employee-3-270w@1x.jpg"
                 alt="сотрудник с должностью Marketing"
-                width="270"
-                height="260"
+                
               />
               <div class="team__content">
                 <h3 class="team__title">Николай Тарасов</h3>
@@ -337,11 +351,12 @@
 
             <!-- сотрудник 4 -->
             <li class="team__item">
-              <img
-                src="./images/employee-4.jpg"
+              <img class="team__img"
+                srcset="./images/employee-4-270w@1x.jpg 270w, ./images/employee-4-354w@1x.jpg 354w, ./images/employee-4-450w@1x.jpg 450w, ./images/employee-4-540w@2x.jpg 540w, ./images/employee-4-708w@2x.jpg 708w, ./images/employee-4-900w@2x.jpg 900w"
+                sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw"
+                src="./images/employee-4-270w@1x.jpg"
                 alt="сотрудник с должностью UI Designer"
-                width="270"
-                height="260"
+               
               />
               <div class="team__content">
                 <h3 class="team__title">Михаил Ермаков</h3>
