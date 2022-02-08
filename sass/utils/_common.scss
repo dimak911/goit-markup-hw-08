@@ -1,3 +1,9 @@
+//Предотвращает сролл бэкграунда при открытой модалке
+body.modal-open,
+body.menu-open {
+  overflow: hidden;
+}
+
 // Контейнер для контента
 .container {
   padding-left: 15px;

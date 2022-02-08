@@ -1,6 +1,7 @@
 // Шапка
 
 .header {
+  position: relative;
   border-bottom: 1px solid $header-border-color;
 }
 
@@ -18,18 +19,43 @@
   outline: 2px solid green;
 }
 
-.burger-btn__icon {
-  display: block;
-}
+// Кнопка мобильного меню
 
 .burger-btn {
-  padding: 0;
+  display: inline-flex;
   margin: 0;
+  padding: 0;
   border: none;
   background-color: transparent;
+  z-index: 2;
   &:hover .burger-btn__icon,
   &:focus .burger-btn__icon {
     fill: $accent-color;
+  }
+
+  & .icon-burger-close {
+    display: none;
+  }
+  &.is-open .icon-burger-close {
+    display: block;
+  }
+  &.is-open .icon-burger {
+    display: none;
+  }
+}
+
+// Мобильное меню
+.mobile-menu {
+  display: none;
+  &.is-open {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: $secondary-text-color;
   }
 }
 
@@ -40,6 +66,7 @@
 
 .main-menu {
   display: flex;
+  flex-direction: column;
 }
 
 .main-menu__item {

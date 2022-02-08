@@ -31,15 +31,20 @@
         <nav class="header-nav">
           <!-- Лого -->
           <a class="logo logo__header" href="./index.html">Web<span class="logo__dark">Studio</span></a>
-          <!-- Главное меню -->
-          <button class="burger-btn" type="button">
-            <svg class="burger-btn__icon" width="40 " height="40">
-              <use href="./images/icons.svg#icon-burger"></use>
-            </svg>
-            <svg class="burger-btn__icon" width="40 " height="40">
-              <use href="./images/icons.svg#icon-burger-close"></use>
+          
+          <!-- Иконки на мобильном -->
+          <button class="burger-btn" type="button" aria-expanded="false" aria-controls="menu-container" data-menu-button>
+            <svg class="burger-btn__icon" width="40 " height="40" aria-label="Переключатель мобильного меню">
+              <use class="icon-burger" href="./images/icons.svg#icon-burger"></use>
+              <use class="icon-burger-close" href="./images/icons.svg#icon-burger-close"></use>
             </svg>
           </button>
+
+
+
+
+
+          <!-- Главное меню -->
           <div class="main-menu-box">
             <ul class="main-menu">
               <li class="main-menu__item">
@@ -71,6 +76,25 @@
           </ul>
         </div>
       </div>
+
+        <!-- Мобильное меню -->
+      <div class="mobile-menu" id="menu-container" data-menu>
+        <ul class="main-menu">
+              <li class="main-menu__item">
+                <a class="main-menu__link main-menu__link--current" href="./index.html">Студия</a>
+              </li>
+              <li class="main-menu__item">
+                <a class="main-menu__link" href="./portfolio.html">Портфолио</a>
+              </li>
+              <li class="main-menu__item"><a class="main-menu__link" href="#">Контакты</a></li>
+            </ul>
+
+
+        
+      </div>
+
+
+
     </header>
     <!-- основная информация -->
     <main>
@@ -608,6 +632,7 @@
     <!-- end модальное окно  -->
     
     <!-- start script -->
+    <script src="./js/mobile-menu.js"></script>
     <script src="./js/modal.js"></script>
     <!-- end script -->
 
