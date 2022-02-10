@@ -24,41 +24,102 @@
     />
     <link rel="stylesheet" href="./css/main.min.css" />
   </head>
-  <body>
+  <body id="body">
     <!-- Шапка -->
     <header class="header">
       <div class="header__container container">
         <nav class="header-nav">
           <!-- Лого -->
           <a class="logo logo__header" href="./index.html">Web<span class="logo__dark">Studio</span></a>
+          
+          <!-- Иконки на мобильном -->
+          <button onclick="myFunction()" class="burger-btn" type="button" aria-expanded="false" aria-controls="menu-container" data-menu-button>
+            <svg class="burger-btn__icon" width="40 " height="40" aria-label="Переключатель мобильного меню">
+              <use class="icon-burger" href="./images/icons.svg#icon-burger"></use>
+              <use class="icon-burger-close" href="./images/icons.svg#icon-burger-close"></use>
+            </svg>
+          </button>
+
           <!-- Главное меню -->
-          <ul class="main-menu">
-            <li class="main-menu__item">
-              <a class="main-menu__link" href="./index.html">Студия</a>
-            </li>
-            <li class="main-menu__item">
-              <a class="main-menu__link main-menu__link--current" href="./portfolio.html">Портфолио</a>
-            </li>
-            <li class="main-menu__item"><a class="main-menu__link" href="">Контакты</a></li>
-          </ul>
+          <div class="main-menu-box">
+            <ul class="main-menu">
+              <li class="main-menu__item">
+                <a class="main-menu__link" href="./index.html">Студия</a>
+              </li>
+              <li class="main-menu__item">
+                <a class="main-menu__link main-menu__link--current" href="./portfolio.html">Портфолио</a>
+              </li>
+              <li class="main-menu__item"><a class="main-menu__link" href="#">Контакты</a></li>
+            </ul>
+          </div>
         </nav>
         <!-- Контакты в шапке -->
-        <ul class="contacts">
-          <li class="contacts__item">
-            <a class="contacts__link" href="mailto:info@devstudio.com">
-              <svg class="contacts__icon" width="16" height="12">
-                <use href="./images/icons.svg#icon-envelope">
-              </svg>info@devstudio.com</a>
-          </li>
-          <li class="contacts__item">
-            
-            <a class="contacts__link" href="tel:+380961111111">
-              <svg class="contacts__icon" width="10" height="16">
-                <use href="./images/icons.svg#icon-smartphone">
-              </svg>+38 096 111 11 11</a>
-          </li>
-        </ul>
+        <div class="main-menu-box">
+          <ul class="contacts">
+            <li class="contacts__item">
+              <a class="contacts__link" href="mailto:info@devstudio.com">
+                <svg class="contacts__icon" width="16" height="12">
+                  <use href="./images/icons.svg#icon-envelope">
+                </svg>info@devstudio.com</a>
+            </li>
+            <li class="contacts__item">
+              
+              <a class="contacts__link" href="tel:+380961111111">
+                <svg class="contacts__icon" width="10" height="16">
+                  <use href="./images/icons.svg#icon-smartphone">
+                </svg>+38 096 111 11 11</a>
+            </li>
+          </ul>
+        </div>
       </div>
+      <!-- Мобильное меню -->
+      <div class="mobile-menu" id="menu-container" data-menu>
+        <div class="container mobile-container">
+          <ul class="mobile-main-menu">
+            <li class="mobile-main-menu__item">
+              <a class="mobile-main-menu__link" href="./index.html">Студия</a>
+            </li>
+            <li class="mobile-main-menu__item">
+              <a class="mobile-main-menu__link mobile-main-menu__link--current" href="./portfolio.html">Портфолио</a>
+            </li>
+            <li class="mobile-main-menu__item"><a class="mobile-main-menu__link" href="#">Контакты</a></li>
+          </ul>
+
+          <!-- Mobile contacts -->
+          <ul class="mobile-contacts">
+            <li class="mobile-contacts__item">
+              
+              <a class="mobile-contacts__link" href="tel:+380961111111">
+                +38 096 111 11 11</a>
+            </li>
+            <li class="mobile-contacts__item">
+              <a class="mobile-contacts__link mobile-contacts__link--email-style" href="mailto:info@devstudio.com">
+                info@devstudio.com</a>
+            </li>
+          </ul>
+
+          <!-- Mobile socials -->
+          <ul class="mobile-socials-list">
+            <li class="mobile-socials-item">
+              <a class="mobile-socials-link" href="#">Instagram</a>
+            </li>
+            <div class="line"></div>
+            <li class="mobile-socials-item">
+              <a class="mobile-socials-link" href="#">Twitter</a>
+            </li>
+            <div class="line"></div>
+            <li class="mobile-socials-item">
+              <a class="mobile-socials-link" href="#">Facebook</a>
+            </li>
+            <div class="line"></div>
+            <li class="mobile-socials-item">
+              <a class="mobile-socials-link" href="#">LinkedIn</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
     </header>
     <main>
       <section class="section">
@@ -259,7 +320,8 @@
     <!-- подвал -->
     <footer class="footer">
       <div class="container container--footer">
-        <div class="address-box">
+        <div class="footer-wrapper">
+          <div class="address-box">
           <!-- лого -->
         <a class="logo logo__footer" href="./index.html">Web<span class="logo__light">Studio</span></a>
         <address class="address">
@@ -283,46 +345,47 @@
             </li>
           </ul>
         </address>
-        </div>
+          </div>
 
-        <div class="join-box">
-          <h3 class="join-box__title">Присоединяйтесь</h3>
-          <!-- соцсети -->
-          <ul class="socials">
+          <div class="join-box">
+            <h3 class="join-box__title">Присоединяйтесь</h3>
+            <!-- соцсети -->
+            <ul class="socials">
 
-            <li class="socials__item">
-              <a class="socials__link socials__link--color-footer" href="">
-              <svg class="socials__icon" width="20" height="20">
-                <use href="./images/icons.svg#icon-instagram" >
-              </svg>
-              </a>
-            </li>
+              <li class="socials__item">
+                <a class="socials__link socials__link--color-footer" href="">
+                <svg class="socials__icon" width="20" height="20">
+                  <use href="./images/icons.svg#icon-instagram" >
+                </svg>
+                </a>
+              </li>
 
-            <li class="socials__item">
-              <a class="socials__link socials__link--color-footer" href="">
-              <svg class="socials__icon" width="20" height="20">
-                <use href="./images/icons.svg#icon-twitter" >
-              </svg>
-              </a>
-            </li>
+              <li class="socials__item">
+                <a class="socials__link socials__link--color-footer" href="">
+                <svg class="socials__icon" width="20" height="20">
+                  <use href="./images/icons.svg#icon-twitter" >
+                </svg>
+                </a>
+              </li>
 
-            <li class="socials__item">
-              <a class="socials__link socials__link--color-footer" href="">
-              <svg class="socials__icon" width="20" height="20">
-                <use href="./images/icons.svg#icon-facebook" >
-              </svg>
-              </a>
-            </li>
+              <li class="socials__item">
+                <a class="socials__link socials__link--color-footer" href="">
+                <svg class="socials__icon" width="20" height="20">
+                  <use href="./images/icons.svg#icon-facebook" >
+                </svg>
+                </a>
+              </li>
 
-            <li class="socials__item">
-              <a class="socials__link socials__link--color-footer" href="">
-              <svg class="socials__icon" width="20" height="20">
-                <use href="./images/icons.svg#icon-linkedin" >
-              </svg>
-              </a>
-            </li>
+              <li class="socials__item">
+                <a class="socials__link socials__link--color-footer" href="">
+                <svg class="socials__icon" width="20" height="20">
+                  <use href="./images/icons.svg#icon-linkedin" >
+                </svg>
+                </a>
+              </li>
 
-          </ul>
+            </ul>
+          </div>
         </div>
 
         <!-- подписка -->
@@ -340,5 +403,10 @@
 
       </div>
     </footer>
+
+    <!-- start script -->
+    <script src="./js/mobile-menu.js"></script>
+    <script src="./js/toggle.js"></script>
+    <!-- end script -->
   </body>
 </html>

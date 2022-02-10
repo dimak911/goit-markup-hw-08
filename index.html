@@ -24,7 +24,7 @@
     />
     <link rel="stylesheet" href="./css/main.min.css" />
   </head>
-  <body>
+  <body id="body">
     <!-- Шапка -->
     <header class="header">
       <div class="header__container container">
@@ -33,16 +33,12 @@
           <a class="logo logo__header" href="./index.html">Web<span class="logo__dark">Studio</span></a>
           
           <!-- Иконки на мобильном -->
-          <button class="burger-btn" type="button" aria-expanded="false" aria-controls="menu-container" data-menu-button>
+          <button onclick="myFunction()" class="burger-btn" type="button" aria-expanded="false" aria-controls="menu-container" data-menu-button>
             <svg class="burger-btn__icon" width="40 " height="40" aria-label="Переключатель мобильного меню">
               <use class="icon-burger" href="./images/icons.svg#icon-burger"></use>
               <use class="icon-burger-close" href="./images/icons.svg#icon-burger-close"></use>
             </svg>
           </button>
-
-
-
-
 
           <!-- Главное меню -->
           <div class="main-menu-box">
@@ -76,24 +72,53 @@
           </ul>
         </div>
       </div>
-
-        <!-- Мобильное меню -->
+      <!-- Мобильное меню -->
       <div class="mobile-menu" id="menu-container" data-menu>
-        <ul class="main-menu">
-              <li class="main-menu__item">
-                <a class="main-menu__link main-menu__link--current" href="./index.html">Студия</a>
-              </li>
-              <li class="main-menu__item">
-                <a class="main-menu__link" href="./portfolio.html">Портфолио</a>
-              </li>
-              <li class="main-menu__item"><a class="main-menu__link" href="#">Контакты</a></li>
-            </ul>
+        <div class="container mobile-container">
+          <ul class="mobile-main-menu">
+            <li class="mobile-main-menu__item">
+              <a class="mobile-main-menu__link mobile-main-menu__link--current" href="./index.html">Студия</a>
+            </li>
+            <li class="mobile-main-menu__item">
+              <a class="mobile-main-menu__link" href="./portfolio.html">Портфолио</a>
+            </li>
+            <li class="mobile-main-menu__item"><a class="mobile-main-menu__link" href="#">Контакты</a></li>
+          </ul>
 
+          <!-- Mobile contacts -->
+          <ul class="mobile-contacts">
+            <li class="mobile-contacts__item">
+              
+              <a class="mobile-contacts__link" href="tel:+380961111111">
+                +38 096 111 11 11</a>
+            </li>
+            <li class="mobile-contacts__item">
+              <a class="mobile-contacts__link mobile-contacts__link--email-style" href="mailto:info@devstudio.com">
+                info@devstudio.com</a>
+            </li>
+          </ul>
 
-        
+          <!-- Mobile socials -->
+          <ul class="mobile-socials-list">
+            <li class="mobile-socials-item">
+              <a class="mobile-socials-link" href="#">Instagram</a>
+            </li>
+            <div class="line"></div>
+            <li class="mobile-socials-item">
+              <a class="mobile-socials-link" href="#">Twitter</a>
+            </li>
+            <div class="line"></div>
+            <li class="mobile-socials-item">
+              <a class="mobile-socials-link" href="#">Facebook</a>
+            </li>
+            <div class="line"></div>
+            <li class="mobile-socials-item">
+              <a class="mobile-socials-link" href="#">LinkedIn</a>
+            </li>
+          </ul>
+
+        </div>
       </div>
-
-
 
     </header>
     <!-- основная информация -->
@@ -176,7 +201,11 @@
             <!-- картинка 1 -->
             <li class="services__item">
               <div class="services__box">
-                <img src="./images/box-1.jpg" alt="человек пишет код" width="370" height="294" />
+                <img
+                srcset="./images/box-1-370@1x.jpg 1x, ./images/box-1-740@2x.jpg 2x" 
+                src="./images/box-1-370@1x.jpg" 
+                alt="человек пишет код"
+                />
                 <div class="services__lable">
                   <h3 class="services__title">Десктопные приложения</h3>
                 </div>
@@ -186,11 +215,11 @@
             <li class="services__item">
               <div class="services__box">
                 <img
-                src="./images/box-2.jpg"
+                srcset="./images/box-2-370@1x.jpg 1x, ./images/box-2-740@2x.jpg 2x" 
+                src="./images/box-2-370@1x.jpg" 
                 alt="человек держит смартфон и смотрит дизайн на ноутбуке"
-                width="370"
-                height="294"
-              />
+                />
+              
                 <div class="services__lable">
                   <h3 class="services__title">Мобильные приложения</h3>
                 </div>
@@ -201,11 +230,11 @@
             <li class="services__item">
               <div class="services__box">
                 <img
-                src="./images/box-3.jpg"
+                srcset="./images/box-3-370@1x.jpg 1x, ./images/box-3-740@2x.jpg 2x" 
+                src="./images/box-3-370@1x.jpg" 
                 alt="человек выбирает цвет на плашете"
-                width="370"
-                height="294"
-              />
+                />
+              
                 <div class="services__lable">
                   <h3 class="services__title">Дизайнерские решения</h3>
                 </div>
@@ -489,7 +518,8 @@
     <!-- подвал -->
     <footer class="footer">
       <div class="container container--footer">
-        <div class="address-box">
+        <div class="footer-wrapper">
+          <div class="address-box">
           <!-- лого -->
         <a class="logo logo__footer" href="./index.html">Web<span class="logo__light">Studio</span></a>
         <address class="address">
@@ -513,46 +543,47 @@
             </li>
           </ul>
         </address>
-        </div>
+          </div>
 
-        <div class="join-box">
-          <h3 class="join-box__title">Присоединяйтесь</h3>
-          <!-- соцсети -->
-          <ul class="socials">
+          <div class="join-box">
+            <h3 class="join-box__title">Присоединяйтесь</h3>
+            <!-- соцсети -->
+            <ul class="socials">
 
-            <li class="socials__item">
-              <a class="socials__link socials__link--color-footer" href="">
-              <svg class="socials__icon" width="20" height="20">
-                <use href="./images/icons.svg#icon-instagram" >
-              </svg>
-              </a>
-            </li>
+              <li class="socials__item">
+                <a class="socials__link socials__link--color-footer" href="">
+                <svg class="socials__icon" width="20" height="20">
+                  <use href="./images/icons.svg#icon-instagram" >
+                </svg>
+                </a>
+              </li>
 
-            <li class="socials__item">
-              <a class="socials__link socials__link--color-footer" href="">
-              <svg class="socials__icon" width="20" height="20">
-                <use href="./images/icons.svg#icon-twitter" >
-              </svg>
-              </a>
-            </li>
+              <li class="socials__item">
+                <a class="socials__link socials__link--color-footer" href="">
+                <svg class="socials__icon" width="20" height="20">
+                  <use href="./images/icons.svg#icon-twitter" >
+                </svg>
+                </a>
+              </li>
 
-            <li class="socials__item">
-              <a class="socials__link socials__link--color-footer" href="">
-              <svg class="socials__icon" width="20" height="20">
-                <use href="./images/icons.svg#icon-facebook" >
-              </svg>
-              </a>
-            </li>
+              <li class="socials__item">
+                <a class="socials__link socials__link--color-footer" href="">
+                <svg class="socials__icon" width="20" height="20">
+                  <use href="./images/icons.svg#icon-facebook" >
+                </svg>
+                </a>
+              </li>
 
-            <li class="socials__item">
-              <a class="socials__link socials__link--color-footer" href="">
-              <svg class="socials__icon" width="20" height="20">
-                <use href="./images/icons.svg#icon-linkedin" >
-              </svg>
-              </a>
-            </li>
+              <li class="socials__item">
+                <a class="socials__link socials__link--color-footer" href="">
+                <svg class="socials__icon" width="20" height="20">
+                  <use href="./images/icons.svg#icon-linkedin" >
+                </svg>
+                </a>
+              </li>
 
-          </ul>
+            </ul>
+          </div>
         </div>
 
         <!-- подписка -->
@@ -634,6 +665,7 @@
     <!-- start script -->
     <script src="./js/mobile-menu.js"></script>
     <script src="./js/modal.js"></script>
+    <script src="./js/toggle.js"></script>
     <!-- end script -->
 
   </body>

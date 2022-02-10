@@ -6,3 +6,8 @@
   height: 1px;
   margin: -1px;
 }
+
+// Запрет сролла body при открытом мобильном меню
+.no-scroll {
+  overflow: hidden;
+}
