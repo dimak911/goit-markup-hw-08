@@ -28,7 +28,7 @@
   padding: 0;
   border: none;
   background-color: transparent;
-  z-index: 2;
+  z-index: 3;
   &:hover .burger-btn__icon,
   &:focus .burger-btn__icon {
     fill: $accent-color;
@@ -60,6 +60,7 @@
     width: 100%;
     height: 100%;
     overflow-y: auto;
+    z-index: 2;
 
     background-color: $secondary-text-color;
   }

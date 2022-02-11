@@ -3,12 +3,26 @@
 // Фильтр
 .filter {
   display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 50px;
+  }
 }
 
-.filter__item:not(:last-child) {
-  margin-right: 8px;
+.filter__item {
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+  @media screen and (max-width: calc(#{$tablet} - 1px)) {
+    & {
+      margin-bottom: 15px;
+    }
+  }
 }
 
 .filter__button {
@@ -53,9 +67,16 @@
 }
 
 .work__item {
-  flex-basis: calc(100% / 3 - #{$work-item-gap});
   margin-right: #{$work-item-gap};
   margin-bottom: #{$work-item-gap};
+  flex-basis: calc(100% / 1 - #{$work-item-gap});
+
+  @media screen and (min-width: $tablet) {
+    flex-basis: calc(100% / 2 - #{$work-item-gap});
+  }
+  @media screen and (min-width: $desktop) {
+    flex-basis: calc(100% / 3 - #{$work-item-gap});
+  }
 }
 
 .work__link {
@@ -73,6 +94,12 @@
 .work__thumb {
   position: relative;
   overflow: hidden;
+}
+
+@media screen and (max-width: calc(#{$tablet} - 1px)) {
+  .work__thumb > img {
+    width: 100%;
+  }
 }
 
 .work__discription {
