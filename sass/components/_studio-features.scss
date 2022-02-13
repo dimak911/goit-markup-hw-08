@@ -47,6 +47,10 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: $header-color;
+
+  @media screen and (max-width: calc(#{$tablet} - 1px)) {
+    text-align: center;
+  }
 }
 
 .features__text {
